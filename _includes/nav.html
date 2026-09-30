@@ -1,5 +1,7 @@
 <nav>
   <a class="nav-logo" href="{{ '/' | relative_url }}">Optima <span>Engineering</span></a>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Apri menu">
+  <label for="menu-toggle" class="menu-btn"><span></span></label>
   <ul class="nav-links">
     <li><a href="{{ '/#servizi' | relative_url }}">Servizi</a></li>
     <li><a href="{{ '/#processo' | relative_url }}">Come lavoro</a></li>
@@ -7,3 +9,7 @@
     <li><a href="{{ '/#contatto' | relative_url }}" class="nav-cta">Parliamone</a></li>
   </ul>
 </nav>
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('menu-toggle').checked = false));
+</script>
