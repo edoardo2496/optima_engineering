@@ -1,1 +1,33 @@
+---
+layout: default
+title: Optima Engineering — Dati e processi per le PMI
+---
+{% include hero.html %}
 
+<section class="services" id="servizi">
+  <div class="section-label">Servizi</div>
+  <h2 class="section-title">Dal dato grezzo alla decisione.</h2>
+  <div class="service-list">
+    {% for s in site.data.servizi %}{% include servizio.html s=s %}{% endfor %}
+  </div>
+</section>
+
+<section class="process" id="processo">
+  <div class="section-label">Come lavoro</div>
+  <h2 class="section-title">Quattro passi, dal brief al sistema operativo.</h2>
+  <div class="process-steps">
+    {% for p in site.data.processo %}
+    <div class="process-step">
+      <div class="step-number">{{ forloop.index }}</div>
+      <div class="step-title">{{ p.titolo }}</div>
+      <div class="step-desc">{{ p.testo }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta-section" id="contatto">
+  <h2 class="cta-title">Parliamo dei tuoi dati.</h2>
+  <p class="cta-sub">Una call di 30 minuti per capire dove sei e cosa ti serve. Nessun impegno.</p>
+  <a href="mailto:edoardo.crema@outlook.it" class="btn-primary">Scrivimi una mail</a>
+</section>
