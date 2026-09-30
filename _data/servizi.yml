@@ -1,1 +1,12 @@
-
+- nome: Data Engineering
+  descrizione: Unifico fonti eterogenee (gestionali, Excel, macchinari) in un database centrale, con ETL automatici al posto dei download manuali.
+  tag: [Python, SQL, PostgreSQL, ETL]
+- nome: Data Analysis e BI
+  descrizione: Dashboard e KPI che la direzione legge davvero, collegati direttamente ai tuoi dati e aggiornati in automatico.
+  tag: [Power BI, Superset, KPI]
+- nome: Data Science
+  descrizione: Previsioni, simulazioni e modelli statistici per decidere con numeri e non a intuito.
+  tag: [Forecasting, Monte Carlo, Ricerca operativa]
+- nome: Consulenza industriale
+  descrizione: Controllo dei costi, mappatura dei processi, individuazione di colli di bottiglia e sprechi, miglioramento del conto economico, modelli finanziari.
+  tag: [Controllo costi, Processi, Modelli finanziari]
