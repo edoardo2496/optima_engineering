@@ -1,1 +1,9 @@
-
+<div class="service-item">
+  <div>
+    <div class="service-name">{{ include.s.nome }}</div>
+    <div class="service-desc">{{ include.s.descrizione }}</div>
+    <div class="service-tags">
+      {% for t in include.s.tag %}<span class="tag">{{ t }}</span>{% endfor %}
+    </div>
+  </div>
+</div>
