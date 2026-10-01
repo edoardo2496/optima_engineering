@@ -77,6 +77,18 @@ nav.scrolled{background:rgba(10,10,10,.92);border-color:var(--border);backdrop-f
 .step-title{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--bright);margin-bottom:.6rem}
 .step-desc{font-size:.9rem;color:var(--muted)}
 
+/* ── CHI SONO ── */
+.about{padding:7rem 4rem;border-top:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:5rem;align-items:start}
+.about-body p{font-size:1rem;color:var(--text);margin-bottom:1.2rem;max-width:60ch}
+.about-body p strong{color:var(--bright);font-weight:500}
+.about-aside{border-left:1px solid var(--border);padding-left:2.5rem}
+.aside-item{margin-bottom:2rem}
+.aside-item-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.aside-item-value{font-size:.9rem;color:var(--text)}
+.aside-item-value a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+.aside-item-value a:hover{border-color:var(--accent)}
+
 /* ── CTA ── */
 .cta-section{padding:7rem 4rem;text-align:center;border-top:1px solid var(--border)}
 .cta-title{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--bright);margin-bottom:1rem}
@@ -136,7 +148,9 @@ footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;align-i
   .hero-actions{flex-direction:column;align-items:stretch;gap:1.2rem;text-align:center}
   .btn-primary{text-align:center;display:block}
 
-  .services,.process,.cta-section{padding:4.5rem 1.5rem}
+  .services,.process,.about,.cta-section{padding:4.5rem 1.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-aside{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:2rem}
   .service-item{padding:2rem 1.5rem}
   .process-steps{grid-template-columns:1fr 1fr}
   .page{padding:7rem 1.5rem 4rem}
