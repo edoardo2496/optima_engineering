@@ -50,4 +50,4 @@ Un foglio Google non è un database: non impone regole sui dati, quindi qualcuno
 
 ---
 
-Se la tua azienda ha lo stesso problema, cioè dati che nascono in un posto e vengono contati in un altro con settimane di ritardo, [scrivimi]({{ '/#contatto' | relative_url }}): di solito basta una call per capire da dove partire.
+Se la tua azienda ha lo stesso problema, cioè dati che nascono in un posto e vengono contati in un altro con settimane di ritardo, scrivimi a edoardo.crema@outlook.it. Di solito basta una call per capire da dove partire.
