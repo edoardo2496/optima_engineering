@@ -13,6 +13,13 @@
   </ul>
 </nav>
 <script>
+  // chiude il menu mobile dopo il click su un link
   document.querySelectorAll('.nav-links a').forEach(a =>
     a.addEventListener('click', () => document.getElementById('menu-toggle').checked = false));
+
+  // sfondo scuro della barra dopo lo scroll
+  const navEl = document.querySelector('nav');
+  const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 50);
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 </script>
