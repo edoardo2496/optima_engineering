@@ -1,4 +1,4 @@
-* NAV */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(242,245,240,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
 .nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
 .nav-logo-img{height:32px;width:auto;display:block}
