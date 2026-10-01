@@ -93,6 +93,11 @@ nav.scrolled{background:rgba(10,10,10,.92);border-color:var(--border);backdrop-f
 .page article{padding:1.8rem 0;border-top:1px solid var(--border)}
 .page a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
 .page a:hover{border-color:var(--accent)}
+.page ul,.page ol{padding-left:1.4rem;margin-bottom:1.4rem;max-width:68ch}
+.page li{margin-bottom:.5rem;line-height:1.7}
+.page li::marker{color:var(--accent)}
+.page img{max-width:100%;height:auto;border:1px solid var(--border);margin:1.5rem 0;display:block}
+.page em{color:var(--text);font-style:italic}
 .page article h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.35rem;letter-spacing:0;text-transform:none;color:var(--bright);margin:0 0 .4rem;line-height:1.2}
 .page article h3 a{color:var(--bright);border-bottom:none}
 .page article h3 a:hover{color:var(--accent)}
