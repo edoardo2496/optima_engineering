@@ -4,7 +4,7 @@ title: "Dal cantiere al dato: raccogliere gli acquisti senza comprare un softwar
 categoria: Data Engineering
 ---
 
-In un'impresa di costruzioni gli acquisti nascono dove nessuno ha un computer davanti: in cantiere. Il capocantiere ordina il materiale al telefono, il fornitore consegna, la bolla finisce in una cartella o in una chat. Quando l'amministrazione registra tutto, spesso è passato un mese, e il costo di un cantiere si scopre a lavori finiti.
+In un'impresa edile gli acquisti nascono dove nessuno ha un computer davanti: in cantiere. Il capocantiere ordina il materiale al telefono, il fornitore consegna, la bolla finisce in una cartella o al peggio persa tra un mattone e l'altro. Quando l'amministrazione registra tutto, spesso è passato un mese, e il costo di un cantiere si scopre a lavori finiti.
 
 Il problema non è la mancanza di un gestionale. È che **il dato nasce lontano dal sistema che dovrebbe contarlo**, e ogni passaggio manuale in mezzo è un ritardo, un errore possibile, una voce dimenticata.
 
@@ -30,11 +30,11 @@ I dati inviati dalla web app arrivano in un **foglio Google**, che funziona da e
 
 Perché un foglio e non direttamente un database?
 
-- **Costo e manutenzione zero**: non c'è un server da tenere acceso o da proteggere.
-- **Visibilità immediata**: chi in azienda vuole controllare cosa è stato ordinato apre il foglio e lo vede, senza strumenti particolari.
+- **Costo e manutenzione zero**: non c'è un server da tenere acceso e manutenere.
+- **Visibilità immediata e facilità di utilizzo**: chi in azienda vuole controllare cosa è stato ordinato apre il foglio e lo vede, senza strumenti particolari, senza bisogno di passare per fogure intermedie che estraggano i dati dal db.
 - **Un buffer sicuro**: se il resto della catena si ferma per un giorno, gli ordini sono comunque salvati e nulla va perso.
 
-Il foglio non è l'archivio definitivo, né deve esserlo. È la **cassetta delle lettere**: raccoglie, e basta. Il lavoro vero comincia dopo, di notte, quando uno script porta quei dati in un database ordinato (ne parlo nell'articolo successivo).
+Il foglio non è l'archivio definitivo, né deve esserlo. È la **cassetta delle lettere**: raccoglie, e basta. Il lavoro vero comincia dopo, di notte, quando uno script python porta quei dati in un database ordinato (ne parlo nell'articolo dedicato al servizio di data engineering).
 
 ## Cosa ho imparato
 
@@ -46,7 +46,7 @@ Tre scelte che rifarei:
 
 ## Limiti da conoscere
 
-Un foglio Google non è un database: non impone regole sui dati, quindi qualcuno può scrivere il nome di un fornitore in tre modi diversi. È normale, ed è per questo che serve una fase di pulizia. Non è adatto a volumi molto grandi, ma per gli ordini di un'impresa di dimensioni medie è più che sufficiente.
+Un foglio Google non è un database: non impone regole sui dati, quindi qualcuno può scrivere il nome di un fornitore in tre modi diversi. È normale, ed è per questo che serve una fase di pulizia. Non è adatto a volumi molto grandi, ma per gli ordini di un'impresa di dimensioni piccole è più che sufficiente.
 
 ---
 
