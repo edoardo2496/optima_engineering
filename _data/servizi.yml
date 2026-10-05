@@ -1,12 +1,15 @@
-- nome: Data Engineering
-  descrizione: Riuniamo fonti eterogenee (gestionali, Excel, macchinari) in un database centrale e sostituiamo i download manuali con flussi ETL automatici.
-  tag: [Python, SQL, PostgreSQL, ETL]
-- nome: Data Analysis e BI
+- nome: Ottimizzazione dei costi
+  descrizione: Analizziamo i costi per commessa, prodotto e reparto, individuiamo dove si perde margine e costruiamo i modelli per intervenire sul conto economico.
+  tag: [Controllo di gestione, Costing, Modelli finanziari]
+- nome: Mappatura e ingegnerizzazione dei processi
+  descrizione: Rileviamo come lavora davvero l'azienda, individuiamo colli di bottiglia e sprechi e ridisegniamo i flussi con tempi, risorse e responsabilità misurabili.
+  tag: [Mappatura processi, Teoria delle code, Simulazione]
+- nome: Analisi dei dati e BI
   descrizione: Progettiamo dashboard e KPI collegati direttamente ai dati aziendali e aggiornati in automatico, definiti insieme alla direzione.
   tag: [Power BI, Superset, KPI]
-- nome: Data Science
-  descrizione: Sviluppiamo previsioni, simulazioni e modelli statistici a supporto di decisioni che oggi si basano su stime e abitudine.
+- nome: Data engineering
+  descrizione: Riuniamo fonti eterogenee (gestionali, Excel, macchinari) in un database centrale e sostituiamo i download manuali con flussi ETL automatici.
+  tag: [Python, SQL, PostgreSQL, ETL]
+- nome: Modelli previsionali e di simulazione
+  descrizione: Sviluppiamo previsioni, simulazioni e modelli statistici a supporto delle decisioni di pianificazione e investimento.
   tag: [Forecasting, Monte Carlo, Ricerca operativa]
-- nome: Consulenza industriale
-  descrizione: Analizziamo costi e mappiamo processi, individuiamo colli di bottiglia e sprechi e costruiamo i modelli finanziari per migliorare il conto economico.
-  tag: [Controllo costi, Processi, Modelli finanziari]
