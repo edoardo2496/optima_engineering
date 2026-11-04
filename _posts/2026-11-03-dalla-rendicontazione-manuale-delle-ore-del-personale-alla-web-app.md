@@ -16,7 +16,7 @@ Abbiamo ricostruito il flusso con un diagramma a corsie (swim lane), che mostra 
 
 I colli di bottiglia erano nella raccolta: strumenti non tracciabili, informazioni non strutturate, nessuna convalida al momento dell'inserimento.
 
-![Mappatura processo AS-IS](/assets/swimlane_as_is.png)
+![Mappatura processo AS-IS](/optima_engineering/assets/swimlane_as_is.png)
 
 ## Una sola raccolta per due esigenze
 
@@ -37,7 +37,7 @@ Con i dati ordinati, il resto si automatizza:
 - **Per il commercialista**: uno script Python genera ogni mese il template standard con le ore spacchettate per sede, pronto da inviare, senza ricomposizioni manuali.
 - **Per l'amministrazione**: abbiamo formato il personale amministrativo a consultare in autonomia le presenze, per dipendente, per periodo e per cantiere, così da attribuire i costi alle sedi giuste senza dipendere da nessun altro.
 
-![Esempio anonimo del risultato finale](/assets/app_ore_anonimizzata.png)
+![Web app per la registrazione delle ore](/optima_engineering/assets/app_ore_anonimizzata.png)
 
 ## Cosa è cambiato
 
@@ -47,7 +47,7 @@ Con i dati ordinati, il resto si automatizza:
 - Ore e costi del personale imputati correttamente a ciascuna sede.
 - 25 ore risparmiate dall'amministrazione ogni mese
 
-![Mappatura processo TO-BE](/assets/swimlane_to_be.png)
+![Mappatura processo TO-BE](/optima_engineering/assets/swimlane_to_be.png)
 
 ## Cosa ne ricaviamo
 
