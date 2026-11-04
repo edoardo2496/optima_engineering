@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Quando il prezzo del minerale di ferro suggerisce di comprare: mean-reversion, lemma di Itô e un segnale operativo per gli acquisti"
-categories: "Modellazione Quantitativa"
+categories: Modellazione Quantitativa
 ---
 I prezzi delle materie prime non si comportano come una passeggiata aleatoria: tendono a tornare verso un livello di equilibrio. Modellando il prezzo con un processo di Ornstein-Uhlenbeck e risolvendolo con il lemma di Itô si ottiene una formula esatta per il valore atteso, la varianza e uno Z-score che indica quando il prezzo corrente è statisticamente anomalo.
 
