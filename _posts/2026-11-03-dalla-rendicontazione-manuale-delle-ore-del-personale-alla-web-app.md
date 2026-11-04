@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dalle foto e dai foglietti al dato in tempo reale: la rendicontazione delle ore del personale"
-categoria: ["Data Engineering & Data Optimization"
+categoria: "Data Engineering & Data Optimization"
 ---
 
 Ogni mese, in molte PMI, le ore lavorate dal personale arrivano all'amministrazione per le vie più diverse: un messaggio, la foto di un foglio, un biglietto consegnato a mano. Poi qualcuno le riporta a mano in un file di calcolo, le controlla, le ricompone per il commercialista. Funziona, finché qualcosa non si perde o non si capisce.
