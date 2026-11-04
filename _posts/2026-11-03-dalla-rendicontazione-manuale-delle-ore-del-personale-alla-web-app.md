@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Dalle foto e dai foglietti al dato in tempo reale: la rendicontazione delle ore del personale"
