@@ -17,6 +17,8 @@ Abbiamo ricostruito il flusso con un diagramma a corsie (swim lane), che mostra 
 
 I colli di bottiglia erano nella raccolta: strumenti non tracciabili, informazioni non strutturate, nessuna convalida al momento dell'inserimento.
 
+![Mappatura processo AS-IS](/assets/swimlane_as_is.png)
+
 ## Una sola raccolta per due esigenze
 
 Abbiamo condiviso la mappa con l'amministrazione e con il commercialista. Le due esigenze sembravano diverse, ma partivano dallo stesso dato: chi ha lavorato, quando, dove, quante ore ordinarie e quante straordinarie. Se quel dato viene raccolto bene alla fonte, una sola raccolta basta per entrambi.
@@ -36,6 +38,9 @@ Con i dati ordinati, il resto si automatizza:
 - **Per il commercialista**: uno script Python genera ogni mese il template standard con le ore spacchettate per sede, pronto da inviare, senza ricomposizioni manuali.
 - **Per l'amministrazione**: abbiamo formato il personale amministrativo a consultare in autonomia le presenze, per dipendente, per periodo e per cantiere, così da attribuire i costi alle sedi giuste senza dipendere da nessun altro.
 
+![Esempio anonimo del risultato finale](/app_ore_anonimizzata.png)
+
+
 ## Cosa è cambiato
 
 - Un solo canale di raccolta al posto di molti, con formato unico.
@@ -43,6 +48,8 @@ Con i dati ordinati, il resto si automatizza:
 - Meno errori di trascrizione e meno rielaborazioni.
 - Ore e costi del personale imputati correttamente a ciascuna sede.
 - 25 ore risparmiate dall'amministrazione ogni mese
+
+![Mappatura processo TO-BE](/swimlane_to_be.png)
 
 ## Cosa ne ricaviamo
 
