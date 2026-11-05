@@ -26,7 +26,7 @@ Il percorso che abbiamo impostato per raggiungere l'obiettivo si divide in tre p
 ## 2. Il dataset sintetico
 
 Al fine di poter raccontare in questo articolo il lavoro svolto abbiamo generato un dataset sintetico che però avesse le medesime caratteristiche di quello su cui abbiamo effettivamente lavorato.
-400 clienti, circa 20,8 M€ di fatturato annuo complessivo. Per ogni cliente, 7 variabili (queste ultime sono state individuate dopo un'EDA inziiale sui dati):
+400 clienti, circa 20,8 M€ di fatturato annuo complessivo. Per ogni cliente, 7 variabili (queste ultime sono state individuate dopo un'EDA inziale sui dati):
 
 | Variabile | Significato |
 |---|---|
