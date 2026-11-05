@@ -32,13 +32,13 @@ Per ogni tipo di esame *i* abbiamo descritto la giornata con pochi parametri:
 La **produttività** è la quota di tempo disponibile effettivamente utilizzata:
 
 $$
-u(n) = \frac{\sum_i t_i \, n_i}{T}
+u(n) = \frac{\sum_i t_i n_i}{T}
 $$
 
 Il **punto di pareggio** è il livello in cui i margini coprono i costi fissi:
 
 $$
-\sum_i m_i \, n_i = F
+\sum_i m_i n_i = F
 $$
 
 ## Che cosa ha fatto la ricerca operativa
@@ -53,9 +53,9 @@ Una volta scritto il modello, il problema diventa matematico. Abbiamo usato l'ot
 Tra tutte le combinazioni di esami che raggiungono il pareggio, cerchiamo quella che impegna la macchina il minor tempo possibile:
 
 $$
-\min_{n \ge 0} \; \sum_i t_i \, n_i
+\min_{n \ge 0} \sum_i t_i n_i
 \qquad \text{con} \qquad
-\sum_i m_i \, n_i \ge F
+\sum_i m_i n_i \ge F
 $$
 
 Con un solo tipo di esame la soluzione si scrive direttamente:
@@ -63,9 +63,9 @@ Con un solo tipo di esame la soluzione si scrive direttamente:
 $$
 n_{BE} = \frac{F}{m}
 \qquad
-u_{BE} = \frac{t \, F}{m \, T}
+u_{BE} = \frac{t F}{m T}
 \qquad
-n_{60} = \frac{0{,}6 \, T}{t}
+n_{60} = \frac{0{,}6 T}{t}
 $$
 
 Il primo valore è il numero di esami del pareggio, il secondo la produttività a cui si raggiunge, il terzo il numero di esami che porta la macchina al 60% di utilizzo. Il confronto tra $$u_{BE}$$ e il 60% dice subito quanto margine di manovra resta.
@@ -75,18 +75,18 @@ Con più tipi di esame il risultato cambia in modo istruttivo: per coprire i cos
 > **Approfondimento: la lagrangiana.** Associando un moltiplicatore $$\lambda \ge 0$$ al vincolo di pareggio si ottiene
 >
 > $$
-> \mathcal{L}(n, \lambda) = \sum_i t_i \, n_i + \lambda \left( F - \sum_i m_i \, n_i \right)
+> \mathcal{L}(n, \lambda) = \sum_i t_i n_i + \lambda \left( F - \sum_i m_i n_i \right)
 > $$
 >
 > Le condizioni di ottimo impongono $$t_i - \lambda m_i \ge 0$$ per ogni esame, con uguaglianza per quelli effettivamente eseguiti, da cui
 >
 > $$
-> \lambda^{*} = \min_i \frac{t_i}{m_i}
+> \lambda^{\star} = \min_i \frac{t_i}{m_i}
 > \qquad
-> W^{*} = \lambda^{*} F
+> W^{\star} = \lambda^{\star} F
 > $$
 >
-> Il moltiplicatore è il **prezzo ombra** del vincolo: ogni euro in più di costi fissi da coprire richiede $$\lambda^{*}$$ minuti aggiuntivi di macchina, nella combinazione di esami migliore. È il numero che permette di valutare, per esempio, quanto "pesa" in tempo di lavoro un nuovo contratto di manutenzione.
+> Il moltiplicatore è il **prezzo ombra** del vincolo: ogni euro in più di costi fissi da coprire richiede $$\lambda^{\star}$$ minuti aggiuntivi di macchina, nella combinazione di esami migliore. È il numero che permette di valutare, per esempio, quanto "pesa" in tempo di lavoro un nuovo contratto di manutenzione.
 
 ### I risultati
 
