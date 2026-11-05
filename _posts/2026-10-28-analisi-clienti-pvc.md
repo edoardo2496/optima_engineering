@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Quanto vale davvero un cliente? Dalla classificazione per fatturato al clustering con k-means"
-categoria: Customer Analytics, Gini, Pareto, k-means, PCA, algebra lineare
+categoria: Data Science
 ---
 # Quanto vale davvero un cliente?
 
