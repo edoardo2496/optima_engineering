@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Quando il prezzo del minerale di ferro suggerisce di comprare: mean-reversion, lemma di Itô e un segnale operativo per gli acquisti"
 categories: Modellazione Quantitativa
 ---
