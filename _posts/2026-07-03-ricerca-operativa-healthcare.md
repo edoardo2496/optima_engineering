@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Quanti esami servono davvero? La ricerca operativa applicata alla saturazione delle macchine di imaging"
-date: 2026-07-03
 categoria: Ricerca Operativa - Modellazione matematica
 ---
 
