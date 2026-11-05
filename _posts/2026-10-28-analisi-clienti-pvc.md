@@ -42,10 +42,10 @@ Al fine di poter raccontare in questo articolo il lavoro svolto abbiamo generato
 Per valutare la "vera" redditività abbiamo definito un **margine netto** per cliente:
 
 $$
-M_{netto} = \underbrace{F \cdot m}_{\text{margine lordo}} \;-\; \underbrace{F \cdot r \cdot \tfrac{DSO}{365}}_{\text{costo del credito}} \;-\; \underbrace{1{,}5 \cdot F \cdot \rho}_{\text{costo dei reclami}}
+M_{netto} = \underbrace{F \cdot m}_{\text{margine lordo}} - \underbrace{F \cdot r \cdot \frac{DSO}{365}}_{\text{costo del credito}} - \underbrace{1.5 \cdot F \cdot \rho}_{\text{costo dei reclami}}
 $$
 
-con $F$ fatturato, $m$ margine lordo %, $r = 8\%$ costo annuo del capitale, $\rho$ tasso di reclami. (Il fattore 1,5 riflette il fatto che un reclamo costa più del suo valore nominale: reso, logistica, assistenza.)
+con $$F$$ fatturato, $$m$$ margine lordo %, $$r$$ = 8% costo annuo del capitale, $$\rho$$ tasso di reclami. (Il fattore 1,5 riflette il fatto che un reclamo costa più del suo valore nominale: reso, logistica, assistenza.)
 
 Il dataset è stato costruito con quattro profili di comportamento *nascosti*. **L'analisi non li conosce**: servono solo, alla fine, per verificare se il metodo li ritrova. In breve abbiamo voluto verificare se l'analisi che abbiamo condotto fosse veramente in gardo di "scovare" questi comportamenti d'acquisto dei clienti sulla base dei quali si realizzasse la segmentazione.
 
@@ -56,7 +56,7 @@ Il dataset è stato costruito con quattro profili di comportamento *nascosti*. *
 Ordinando i clienti dal più piccolo al più grande, la **curva di Lorenz** mostra quale quota di fatturato è generata da una data quota di clienti. L'indice di Gini è l'area tra la curva e la diagonale di equidistribuzione (normalizzata):
 
 $$
-G = \frac{n + 1 - 2\,\dfrac{\sum_{i=1}^{n}(n+1-i)\,x_{(i)}}{\sum_{i=1}^{n}x_{(i)}}}{n}
+G = \frac{n + 1 - 2 \cdot \frac{\sum_{i=1}^{n} (n+1-i) x_{(i)}}{\sum_{i=1}^{n} x_{(i)}}}{n}
 $$
 
 ![Curva di Lorenz del fatturato](https://edoardo2496.github.io/optima_engineering/assets/01_lorenz.png)
@@ -114,10 +114,10 @@ Seguendo il modello ABC, infatti, i clienti che avremmo dovuto valutare come *to
 
 ### 6.1 Ogni cliente è un vettore
 
-Il cambio di prospettiva è questo: un cliente non è un numero (il fatturato), ma un **vettore** in $\mathbb{R}^7$:
+Il cambio di prospettiva è questo: un cliente non è un numero (il fatturato), ma un **vettore** in $$\mathbb{R}^7$$:
 
 $$
-\mathbf{x}_i = (\log F_i,\; m_i,\; DSO_i,\; \rho_i,\; \log N_i,\; cv_i,\; q_i) \in \mathbb{R}^7
+\mathbf{x}_i = (\log F_i, m_i, DSO_i, \rho_i, \log N_i, cv_i, q_i) \in \mathbb{R}^7
 $$
 
 Le variabili hanno unità e ordini di grandezza diversi (euro, giorni, percentuali), quindi:
@@ -126,15 +126,15 @@ Le variabili hanno unità e ordini di grandezza diversi (euro, giorni, percentua
 - **standardizziamo** ogni colonna (media 0, deviazione standard 1), così che nessuna dimensione domini le distanze solo per la sua scala.
 In pratica normalizziamo i dati affinchè il nostro modello di "Machine Learning" non abbia allucinazioni.
 
-Otteniamo la matrice $Z \in \mathbb{R}^{400 \times 7}$: ogni riga è un cliente, ogni colonna una caratteristica.
+Otteniamo la matrice $$Z \in \mathbb{R}^{400 \times 7}$$: ogni riga è un cliente, ogni colonna una caratteristica.
 Tale matrice non è altro che il dataset di partenza con i dati normalizzati.
 
 ### 6.2 K-means come problema di ottimizzazione
 
-K-means cerca $k$ gruppi $C_1, \dots, C_k$ con centroidi $\boldsymbol{\mu}_j$ che minimizzino la varianza interna ai gruppi:
+K-means cerca $$k$$ gruppi $$C_1, \dots, C_k$$ con centroidi $$\boldsymbol{\mu}_j$$ che minimizzino la varianza interna ai gruppi:
 
 $$
-\min_{C_1,\dots,C_k} \; \sum_{j=1}^{k} \sum_{\mathbf{z}_i \in C_j} \lVert \mathbf{z}_i - \boldsymbol{\mu}_j \rVert^2
+\min_{C_1,\dots,C_k} \sum_{j=1}^{k} \sum_{\mathbf{z}_i \in C_j} \Vert \mathbf{z}_i - \boldsymbol{\mu}_j \Vert^2
 $$
 
 Il metodo procede per iterazioni: assegna ogni cliente al centroide più vicino, ricalcola i centroidi come media dei punti assegnati, e ripete fino a convergenza. È geometria euclidea pura: ciò che conta è la **distanza tra vettori**. In altre parole il centroide è il cuore geometrico del gruppo. Vettori la cui distanza è simile da un centroide possono essere *classificati" come simili e quindi appartenenti alla stessa categoria, allo stesso segmento.
@@ -152,13 +152,13 @@ Abbiamo scelto **k = 4**: la differenza di silhouette è piccola e k = 4 separa 
 
 ### 6.4 Visualizzare 7 dimensioni: PCA via decomposizione ai valori singolari
 
-Per *vedere* i cluster proiettiamo $Z$ su due dimensioni con la **PCA**, ottenuta dalla **decomposizione ai valori singolari (SVD)**:
+Per *vedere* i cluster proiettiamo $$Z$$ su due dimensioni con la **PCA**, ottenuta dalla **decomposizione ai valori singolari (SVD)**:
 
 $$
-Z = U \Sigma V^{\top}
+Z = U \Sigma V^{T}
 $$
 
-Le colonne di $V$ sono le direzioni principali; i valori singolari $\sigma_i$ misurano quanta varianza cattura ciascuna. Qui le prime due componenti spiegano **~87%** della varianza totale (PC1: 65%, PC2: 21%).
+Le colonne di $$V$$ sono le direzioni principali; i valori singolari $$\sigma_i$$ misurano quanta varianza cattura ciascuna. Qui le prime due componenti spiegano **~87%** della varianza totale (PC1: 65%, PC2: 21%).
 
 Interpretiamo le componenti leggendo i *loadings*:
 
