@@ -228,7 +228,7 @@ L'unica eccezione è istruttiva: **rimuovendo il fatturato l'ARI scende a 0,62**
 ### 8.3 Cambiare modello: Gaussian Mixture
 
 Come controllo indipendente abbiamo adattato un **Gaussian Mixture Model**, che a differenza di k-means ammette cluster ellittici di dimensione diversa e assegna a ogni cliente una **probabilità** di appartenenza anziché una distanza dall'orgine.
-In pratica è come se la residenza di un cittadino in un determinato comune non fosse definita da quanto il suo numero civico si trovi più
+Per fare un'analogia geografica, **K-means** è come assegnare ogni abitante al municipio più vicino in linea d’aria: i confini sono netti e, implicitamente, ogni comune è un cerchio di dimensione simile. Un **Gaussian Mixture** ammette invece comuni di forma e dimensione diverse (uno compatto, uno allungato lungo una valle) e, per chi vive vicino al confine, non obbliga a scegliere: dice che quella persona appartiene al comune A al 70% e al comune B al 30%. Per i clienti vale lo stesso: quelli “di confine”, che stanno migrando da un tipo all’altro, diventano visibili.
 
 ![BIC al variare del numero di componenti](https://edoardo2496.github.io/optima_engineering/assets/07_gmm_bic.png)
 
@@ -237,28 +237,30 @@ In pratica è come se la residenza di un cittadino in un determinato comune non 
 - Il GMM a 4 componenti ritrova **gli stessi gruppi di k-means** (ARI tra i due modelli = 0,996) e **ricostruisce esattamente i profili sottostanti** (ARI = 1,00).
 - **Nessun cliente è ambiguo**: la probabilità di appartenenza al cluster assegnato è sempre superiore al 99,99%.
 
-**Come leggere questi risultati.** Probabilità e stabilità così alte dipendono dal fatto che il dataset è sintetico e costruito con gruppi ben distanti. Su dati reali ci aspettiamo clienti "di confine", con probabilità intermedie, ed è proprio lì che il GMM aggiunge valore rispetto a k-means: permette di segnalare i clienti che stanno migrando da un tipo all'altro. La **procedura di validazione**, però, è quella che applicheremmo identica ai dati veri del cliente.
+**Come leggere questi risultati.** Probabilità e stabilità così alte dipendono dal fatto che il dataset è sintetico e costruito con gruppi ben distanti. Sui dati reali del nostro cliente abbiamo ottenuto ottimi risultati ma i clienti erano molto più "di confine", con probabilità intermedie, ed è proprio lì che il GMM aggiunge valore rispetto a k-means: permette di segnalare i clienti che stanno migrando da un tipo all'altro. La **procedura di validazione**, però, è quella che abbiamo eseguito sui dati veri del cliente.
 
 ---
 
 ## 9. Cosa cambia per il cliente
 
-La segmentazione per fatturato ha prodotto una **decisione sbagliata in modo sistematico**: trattare come "premium" un gruppo di clienti che non genera margine, e trascurare quelli più redditizi per unità di fatturato. Con la segmentazione per cluster, le politiche si differenziano:
+La segmentazione per fatturato, che il cliente aveva impostato, ha prodotto una **decisione sbagliata in modo sistematico**: trattare come "premium" un gruppo di clienti che non genera margine, e trascurare quelli più redditizi per unità di fatturato. Con la segmentazione per cluster, le politiche invece si differenziano:
 
 | Cluster | Azione suggerita |
 |---|---|
 | **Strategico** | Protezione e fidelizzazione: contratti pluriennali, priorità di servizio, accordi di fornitura. |
-| **Grande tossico** | Rinegoziazione: listini, scontistica, condizioni di pagamento (target: da 78 a ~45 giorni), penali o premi legati ai reclami. Valutare il distacco se il margine non migliora. |
+| **Grande non profittevole** | Rinegoziazione: listini, scontistica, condizioni di pagamento (target: da 78 a ~45 giorni), penali o premi legati ai reclami. Valutare il distacco se il margine non migliora. |
 | **Piccolo fedele** | Crescita: cross-selling sul mix ad alto margine, servizio efficiente a basso costo (e-commerce, riordini programmati). |
 | **Occasionale** | Servizio a basso costo, ordini minimi, prezzi di listino; nessun investimento commerciale dedicato. |
 
 ## 10. Limiti e prossimi passi
 
-- **I dati sono sintetici e costruiti con cluster ben separati.** Con dati reali i gruppi sono tipicamente più sfumati, e un ARI vicino a 1 sarebbe sospetto. Il valore dimostrativo sta nel *confronto* tra i metodi, non nel valore assoluto degli indici.
-- **K-means assume cluster "sferici" e di dimensione simile.** Abbiamo verificato la robustezza con bootstrap e Gaussian Mixture (sezione 8); con dati reali conviene aggiungere anche il clustering gerarchico e ripetere i test, perché i gruppi saranno meno separati.
+- **I dati sono sintetici e costruiti con cluster ben separati.** Con dati reali del cliente i gruppo si sono rivelati tipicamente più sfumati, e un ARI vicino a 1 sarebbe sospetto (quello realmente ottenuto nel dataset del nostro cliente era infatti ben più basso).
+Il valore dimostrativo sta nel *confronto* tra i metodi, non nel valore assoluto degli indici. Questo articolo vuole mostrare la "ratio" applicata al problema che il nostro cliente ci ha portato all'attenzione.
+- **K-means assume cluster "sferici" e di dimensione simile.** Abbiamo verificato la robustezza con bootstrap e Gaussian Mixture (sezione 8); con dati reali abbiamo aggiunto anche il clustering gerarchico ed abbiamo ripetuto i test, perché i gruppi erano ovviamente meno separati.
 - **Il margine netto è un modello.** I coefficienti (costo del capitale, moltiplicatore dei reclami) vanno calibrati sui costi aziendali reali.
 - **La fotografia è statica.** Il passo successivo è seguire i clienti nel tempo: migrazioni tra cluster, early-warning sul deterioramento dei pagamenti, stima del *Customer Lifetime Value*.
 
 ## 11. Conclusione
 
-Il fatturato è una variabile facile da misurare e facile da comunicare, ma **ordina i clienti lungo un asse che, nei nostri dati, è quasi indipendente dal loro valore economico**. Trattare ogni cliente come un punto nello spazio delle sue caratteristiche, e lasciare che sia la geometria a rivelare la struttura, è ciò che distingue un'analisi quantitativa da una classificazione per abitudine.
+Il fatturato è una variabile facile da misurare e facile da comunicare, che di primo acchito può dare l'idea di un approccio quantitativo. Questa metrica nasconde però un limite enorme: **ordina i clienti lungo un asse che, nei nostri dati, è quasi indipendente dal loro valore economico**. Il fatturato ha infatti il grande limite di trattare ogni cliente come un punto nello spazio delle sue caratteristiche. Si deve quindi ricorrere ad un po' di algebra lineare e geometria analitica per rivelare la struttura più profonda del comportamento d'acquisto dei clienti.
+Questo approccio è ciò che distingue un'analisi quantitativa da una classificazione per abitudine.
