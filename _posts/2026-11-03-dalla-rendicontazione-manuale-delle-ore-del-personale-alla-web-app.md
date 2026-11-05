@@ -37,7 +37,9 @@ Con i dati ordinati, il resto si automatizza:
 - **Per il commercialista**: uno script Python genera ogni mese il template standard con le ore spacchettate per sede, pronto da inviare, senza ricomposizioni manuali.
 - **Per l'amministrazione**: abbiamo formato il personale amministrativo a consultare in autonomia le presenze, per dipendente, per periodo e per cantiere, così da attribuire i costi alle sedi giuste senza dipendere da nessun altro.
 
-![Web app per la registrazione delle ore](/optima_engineering/assets/app_ore_anonimizzata.png)
+<img src="/optima_engineering/assets/app_ore_anonimizzata.png"
+     alt="Web app per la registrazione delle ore"
+     style="max-width: 280px; width: 100%; display: block; margin: 1.5rem auto;">
 
 ## Cosa è cambiato
 
