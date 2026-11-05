@@ -3,7 +3,6 @@ type: post
 title: "Quanto vale davvero un cliente? Dalla classificazione per fatturato al clustering con k-means"
 categoria: Data Science
 ---
-# Quanto vale davvero un cliente?
 
 *Dalla classificazione per fatturato al clustering con k-means: un caso studio per un produttore di tubi in PVC.*
 
