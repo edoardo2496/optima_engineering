@@ -1,10 +1,8 @@
 ---
+type: post
 title: "Quanto vale davvero un cliente? Dalla classificazione per fatturato al clustering con k-means"
-subtitle: "Caso studio (dati sintetici) – produttore di tubi in PVC"
-author: "Optima Engineering"
-tags: [customer analytics, Gini, Pareto, k-means, PCA, algebra lineare]
+tags: Customer Analytics, Gini, Pareto, k-means, PCA, algebra lineare
 ---
-
 # Quanto vale davvero un cliente?
 
 *Dalla classificazione per fatturato al clustering con k-means: un caso studio per un produttore di tubi in PVC.*
@@ -59,7 +57,7 @@ $$
 G = \frac{n + 1 - 2\,\dfrac{\sum_{i=1}^{n}(n+1-i)\,x_{(i)}}{\sum_{i=1}^{n}x_{(i)}}}{n}
 $$
 
-![Curva di Lorenz del fatturato](img/01_lorenz.png)
+![Curva di Lorenz del fatturato](https://edoardo2496.github.io/optima_engineering/assets/01_lorenz.png)
 
 **Risultato: G ≈ 0,67.** Un valore alto: il portafoglio è fortemente concentrato. C'è una vera *customer concentration*, con il rischio che comporta (dipendenza da pochi clienti, potere contrattuale sbilanciato).
 
@@ -69,7 +67,7 @@ Fin qui, il quadro conferma l'intuizione del cliente. Ma il Gini ci dice **quant
 
 Quanti clienti servono per costruire una data quota di fatturato?
 
-![Curva di Pareto](img/02_pareto.png)
+![Curva di Pareto](https://edoardo2496.github.io/optima_engineering/assets/02_pareto.png)
 
 | Quota di fatturato | Clienti necessari | % dei clienti |
 |---|---|---|
@@ -99,7 +97,7 @@ La classe B, che il cliente considerava "di secondo piano", ha una **redditivit�
 
 > **Tutti i 17 clienti a margine netto negativo si trovano nella classe A.**
 
-![Fatturato vs margine netto per classe ABC](img/03_abc_vs_margine.png)
+![Fatturato vs margine netto per classe ABC](https://edoardo2496.github.io/optima_engineering/assets/03_abc_vs_margine.png)
 
 Nel grafico (scala logaritmica sull'asse x) si vede il problema: **la correlazione tra (log-)fatturato e margine netto percentuale è praticamente nulla (≈ 0,06)**. Sapere quanto fattura un cliente non dice quasi nulla su quanto *guadagna* l'azienda con lui. Una sola dimensione, il fatturato, sta schiacciando uno spazio che ne ha sette.
 
@@ -132,7 +130,7 @@ Il metodo procede per iterazioni: assegna ogni cliente al centroide più vicino,
 
 ### 6.3 Quanti cluster?
 
-![Scelta di k](img/04_scelta_k.png)
+![Scelta di k](https://edoardo2496.github.io/optima_engineering/assets/04_scelta_k.png)
 
 Il gomito dell'inerzia e la silhouette indicano la zona **k = 3–4**. La silhouette massima è per k = 3 (0,63), ma k = 4 resta ottima (0,56) e crolla solo da k = 5 in poi (0,32). Abbiamo scelto **k = 4**: la differenza di silhouette è piccola e k = 4 separa un gruppo (i clienti strategici da quelli "piccoli e fedeli") che sul piano del business ha politiche commerciali molto diverse.
 
@@ -155,7 +153,7 @@ Interpretiamo le componenti leggendo i *loadings*:
 
 Il fatturato, da solo, vive su un asse *secondario* e ortogonale alla qualità del cliente: è la dimostrazione geometrica di ciò che la correlazione ≈ 0 ci aveva già suggerito.
 
-![Cluster k-means vs classi ABC nello spazio PCA](img/05_pca_cluster_vs_abc.png)
+![Cluster k-means vs classi ABC nello spazio PCA](https://edoardo2496.github.io/optima_engineering/assets/05_pca_cluster_vs_abc.png)
 
 A sinistra, i cluster di k-means formano **quattro nuvole nettamente separate**. A destra, **gli stessi identici clienti** colorati secondo le classi ABC: le classi si sovrappongono e si mescolano, tagliando le nuvole "a fette" lungo una sola direzione.
 
@@ -196,7 +194,7 @@ Un risultato di clustering è convincente solo se **sopravvive a un cambio di ca
 
 Abbiamo estratto 200 campioni casuali con reinserimento dei 400 clienti, rilanciato k-means su ciascuno e confrontato la partizione ottenuta con quella originale tramite ARI.
 
-![Stabilità bootstrap e rimozione di una variabile alla volta](img/06_bootstrap_lofo.png)
+![Stabilità bootstrap e rimozione di una variabile alla volta](https://edoardo2496.github.io/optima_engineering/assets/06_bootstrap_lofo.png)
 
 - **ARI medio = 0,99** con k = 4 (in quasi tutti i ricampionamenti la partizione è identica a quella originale; nel caso peggiore l'ARI scende a 0,62).
 - La stabilità *per singolo cluster*, misurata con l'indice di Jaccard medio, è altissima: 1,00 per i "Grandi tossici", 0,99 per "Occasionali" e "Piccoli fedeli", **0,98 per gli "Strategici"**, che sono il gruppo più piccolo (26 clienti) e quindi il più sensibile al ricampionamento.
@@ -216,7 +214,7 @@ L'unica eccezione è istruttiva: **rimuovendo il fatturato l'ARI scende a 0,62**
 
 Come controllo indipendente abbiamo adattato un **Gaussian Mixture Model**, che a differenza di k-means ammette cluster ellittici di dimensione diversa e assegna a ogni cliente una **probabilità** di appartenenza.
 
-![BIC al variare del numero di componenti](img/07_gmm_bic.png)
+![BIC al variare del numero di componenti](https://edoardo2496.github.io/optima_engineering/assets/07_gmm_bic.png)
 
 - Con covarianza completa o diagonale il **criterio BIC è minimo a k = 4**. Il vantaggio su k = 3 è netto con covarianza diagonale (BIC 3.703 contro 3.916) ma **modesto con covarianza completa** (4.108 contro 4.115): in quel caso la preferenza per k = 4 è solo debole.
 - Con covarianza sferica, cioè l'assunzione implicita di k-means, il BIC indicherebbe k = 6: un segnale che le nuvole reali non sono perfettamente sferiche e che k-means va usato con consapevolezza.
