@@ -13,7 +13,7 @@ categoria: Data Science
 ## 1. Il problema
 
 Un'azienda che produce tubi in PVC ci ha chiesto di aiutarli ad analizzare la **qualità del proprio portafoglio clienti**. Fino a quel momento il cliente segmentava con criteri qualitativi o con una variabile quantitativa "debole": **il fatturato generato**. 
-Dal "modus operandi" del cliente emergeva solamente un'analisi un po' piatta: i clienti *grandi* erano "buoni", quelli piccoli "meno importanti".
+Dal "modus operandi" del cliente emergeva solamente un'analisi un po' piatta: i clienti *grandi* erano "buoni", quelli piccoli "cattivi".
 
 È una scelta comprensibile, ma implicita in essa c'è un'ipotesi mai verificata: *che il fatturato sia un buon proxy del valore del cliente*. Noi abbiamo preferito non assumerlo, ma **misurarlo** per poi trarre le dovute conclusioni.
 
