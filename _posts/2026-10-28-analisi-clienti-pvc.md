@@ -7,7 +7,7 @@ categoria: Customer Analytics, Gini, Pareto, k-means, PCA, algebra lineare
 
 *Dalla classificazione per fatturato al clustering con k-means: un caso studio per un produttore di tubi in PVC.*
 
-> **Nota metodologica.** I dati di questo articolo sono **sintetici**: li abbiamo generati noi, con struttura nota, per poter mostrare il metodo senza esporre informazioni del cliente. I numeri sono quindi illustrativi; ciò che conta è il ragionamento, che si applica identico ai dati reali.
+> **Nota metodologica.** I dati di questo articolo sono **sintetici**: li abbiamo generati noi, con struttura nota, per poter mostrare il metodo che abbiamo portato al cliente senza esporre le sue informazioni commerciali. I numeri sono quindi illustrativi; ciò che conta è la soluzione ed il ragionamento che abbiamo voluto proporre
 
 ---
 
@@ -246,11 +246,3 @@ La segmentazione per fatturato ha prodotto una **decisione sbagliata in modo sis
 ## 11. Conclusione
 
 Il fatturato è una variabile facile da misurare e facile da comunicare, ma **ordina i clienti lungo un asse che, nei nostri dati, è quasi indipendente dal loro valore economico**. Trattare ogni cliente come un punto nello spazio delle sue caratteristiche, e lasciare che sia la geometria a rivelare la struttura, è ciò che distingue un'analisi quantitativa da una classificazione per abitudine.
-
-*Optima Engineering*
-
----
-
-### Appendice – Riproducibilità
-
-Dataset (`dataset_clienti_pvc.csv`) e script Python (`analisi.py` per l'analisi principale, `validazione.py` per bootstrap e GMM; librerie: pandas, NumPy, scikit-learn, matplotlib) generano ogni numero e grafico dell'articolo con seed fissati. Eseguire prima `analisi.py`, che crea il dataset.
