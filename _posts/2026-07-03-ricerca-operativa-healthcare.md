@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quanti esami servono davvero? La ricerca operativa applicata alla saturazione delle macchine di imaging"
-categoria: Ricerca Operativa - Modellazione matematica
+categoria: Ricerca Operativa
 ---
 
 In un centro di diagnostica per immagini, le macchine sono l'investimento più pesante e il vincolo più rigido. Una risonanza o una TAC costano ogni giorno, che vengano usate o no: ammortamento, manutenzione, personale dedicato. La domanda che la direzione si pone è semplice, ma spesso senza risposta numerica: **a che livello di utilizzo il centro smette di perdere e comincia a guadagnare, e quanto margine resta da sfruttare?**
