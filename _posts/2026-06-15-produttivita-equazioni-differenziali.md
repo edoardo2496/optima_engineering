@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Turnover: oltre le exit interview, la probabilità di dimissioni"
+categoria: Ingegneria Matematica
+---
+
 # Quando i fogli di calcolo non bastano: modellare la produttività con le equazioni differenziali
 
 *Un caso di studio di Optima Engineering. Il contesto è ricostruito e i dati sono interamente sintetici: il caso reale resta riservato.*
