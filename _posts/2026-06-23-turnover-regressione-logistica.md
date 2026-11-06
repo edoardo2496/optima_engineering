@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turnover: oltre le exit interview, la probabilità di dimissioni"
-categoria: Analisi dati
+categoria: Data science
 ---
 
 Il turnover è uno di quei fenomeni che ogni azienda conosce e quasi nessuna riesce a descrivere con precisione. Un cliente ci ha contattato con una domanda semplice: *il turnover sta davvero crescendo, e che cosa lo spiega?* Per ragioni di riservatezza non possiamo mostrare i suoi dati. In questo articolo raccontiamo il metodo su un **gemello sintetico**: un dataset di dipendenti che abbiamo generato noi, con la stessa struttura di quello reale e con un meccanismo di uscita noto. Tutti i numeri qui sotto vengono da quel dataset e non dicono nulla sull'azienda del cliente. Servono a mostrare come ragioniamo.
